@@ -1,4 +1,5 @@
 # Device Telemetry Data Pipeline & Reporting
+![Telemetry Dashboard](assets/telemetry-dashboard.png)
 
 End-to-end QA/Data Engineering project for mobile device stability telemetry.
 
