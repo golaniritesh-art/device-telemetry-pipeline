@@ -40,3 +40,26 @@ python src/generate_data.py
 python src/ingest.py
 pytest tests/test_data_quality.py -v
 streamlit run dashboard/app.py
+```
+
+## Future Enhancements
+
+Planned future enhancements for the platform include:
+
+- Kafka-based streaming telemetry ingestion for near real-time device event processing
+- REST API-based telemetry ingestion to support application and device clients
+- Real-time validation rules for rejecting malformed or incomplete telemetry events earlier in the pipeline
+- MongoDB or Elasticsearch integration for large-scale telemetry search and diagnostics
+- Snowflake or Azure Data Factory integration for enterprise-grade data warehousing workflows
+- Cloud deployment using Azure or AWS for repeatable hosted environments
+- Containerization using Docker to simplify local setup and deployment
+- CI/CD pipeline expansion with automated data generation, ingestion, testing, and dashboard checks
+- Power BI integration for enterprise reporting and stakeholder-ready telemetry views
+- Historical trend analysis across firmware releases, carriers, regions, and device models
+- Predictive firmware stability scoring based on crash, reboot, modem reset, and call drop patterns
+- Automated release-risk scoring to flag unstable firmware builds before rollout
+- Anomaly detection for modem resets, crash spikes, battery drain, and network failures
+- Device health scoring models using telemetry quality, stability, and performance indicators
+- AI-generated telemetry summaries and defect insights for faster QA triage
+
+These enhancements would further align the project with enterprise-scale telemetry analytics, data engineering, QA automation, and reliability engineering workflows.
