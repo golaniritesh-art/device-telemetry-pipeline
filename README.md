@@ -14,6 +14,24 @@ Python, Pandas, SQLite, Pytest, Streamlit, SQL
 - Source-to-target reconciliation
 - Streamlit dashboard for stability analytics
 
+## Test Cases & Objectives
+
+The data quality test suite validates the SQLite output created by the telemetry ingestion pipeline. Full test case documentation is available in [TEST_CASES.md](TEST_CASES.md), with an Excel version in [TEST_CASES.xlsx](TEST_CASES.xlsx).
+
+| Area | Objective |
+| --- | --- |
+| Database creation | Confirm `database/telemetry.db` is created by the ingestion pipeline. |
+| Raw data load | Confirm raw telemetry records are loaded into `raw_device_telemetry`. |
+| Clean data load | Confirm valid processed records are available in `clean_telemetry_events`. |
+| Rejected data handling | Confirm intentionally invalid records are captured in `rejected_telemetry_events`. |
+| Required fields | Confirm clean records do not contain null `device_id`, `event_id`, or `firmware_version`. |
+| Valid event types | Confirm clean records only contain approved telemetry event types. |
+| Metric ranges | Confirm `battery_level`, `cpu_usage`, and `memory_usage` values stay between `0` and `100`. |
+| Duplicate prevention | Confirm each clean telemetry event has a unique `event_id`. |
+| Reference integrity | Confirm every clean `device_id` exists in the `device_master` table. |
+| Source-to-target reconciliation | Confirm raw record count equals clean record count plus rejected record count. |
+| Reporting reconciliation | Confirm `daily_stability_summary.total_events` matches clean telemetry volume. |
+
 ## Run Project
 
 ```bash
